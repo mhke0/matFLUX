@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use matFLUX in your research, please cite it as below."
+title: "matFLUX: A MATLAB application for 3D MINFLUX data analysis"
+version: "1.0"
+date-released: 2025-04-01
+authors:
+  - family-names: Hacke
+    given-names: Moritz
+    affiliation: Institute of Virology, Heidelberg University Hospital
+    email: moritz.hacke@med.uni-heidelberg.de
+    orcid: "https://orcid.org/0000-0000-0000-0000"  # Replace with your actual ORCID if you have one
+repository-code: "https://github.com/yourusername/matFLUX"  # Replace with actual GitHub URL
+license: MIT
+type: software
+keywords:
+  - 3D localization microscopy
+  - MINFLUX
+  - MATLAB
+  - nanoscopy
+  - multicolor imaging
+  - DBSCAN
+  - Image Alignment
+  - Point Clouds
