@@ -74,8 +74,8 @@ This project is licensed under the [MIT License](LICENSE).
 ## 📢 Citation
 
 If you use matFLUX in your research, please cite it:
-bibtex 
 
+```bibtex 
 @software{hacke2025matflux,
   author       = {Moritz Hacke},
   title        = {matFLUX: A MATLAB application for 3D MINFLUX data analysis},
@@ -84,6 +84,7 @@ bibtex
   url          = {https://github.com/yourusername/matFLUX},
   note         = {MIT License}
 }
+```
 
 
 ## 🤝 Contributing
