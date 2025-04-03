@@ -39,8 +39,9 @@ Requirements:
 
 Usage:
 
-1. Open `matFLUX.mlapp` in MATLAB.
-2. Click **Run** to start the app.
+1. Launch `matFLUX.mlappinstall`.
+2. Run 'matFLUX.mlapp' inside MATLAB.
+3. Click **Run** to start the app.
 
 ---
 
