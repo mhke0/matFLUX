@@ -12,15 +12,15 @@ jobs:
     strategy:
       matrix:
         include:
-        #   - os: windows-latest
-        #     name: win64
+          - os: windows-latest
+            name: win64
           - os: ubuntu-latest
             name: linux
-        #   # macos-13 is the last version that is still targetting Intel Macs
-        #   - os: macos-13
-        #     name: macos
-        #   - os: macos-latest
-        #     name: arm64-macos
+          # macos-13 is the last version that is still targetting Intel Macs
+          - os: macos-13
+            name: macos
+          - os: macos-latest
+            name: arm64-macos
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -39,7 +39,7 @@ jobs:
         shell: bash
         # TODO: Replace 'app.mlapp' with the path of your mlapp file
         run: |
-          matlab-batch -licenseToken "${{ secrets.MATLAB_LICENSE_TOKEN }}" "buildResults = compiler.build.standaloneApplication('./app/matFLUX.mlapp'); fileList = buildResults.Files; fileList = [fileList; {'./app/zarr_extract.py'}]; runtimeProducts = fullfile(buildResults.Options.OutputDir,'requiredMCRProducts.txt'); compiler.package.installer(fileList, runtimeProducts, 'ApplicationName', 'matFLUX', 'InstallerName', 'matFLUXInstall');"
+          matlab-batch -licenseToken "${{ secrets.MATLAB_LICENSE_TOKEN }}" "buildResults = compiler.build.standaloneApplication('./app/matFLUX.mlapp'); fileList = buildResults.Files; fileList = [fileList; {'./app/zarr_extract.py'}]; runtimeProducts = fullfile(buildResults.Options.OutputDir,'requiredMCRProducts.txt'); compiler.package.installer(fileList, runtimeProducts, 'ApplicationName', 'matFLUX', 'InstallerName', 'matFLUXInstall', 'OutputDir', './installer');"
 
       - uses: actions/upload-artifact@v4
         with:
