@@ -1,0 +1,47 @@
+name: Create standalone installers
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build installer on ${{ matrix.os }}
+    strategy:
+      matrix:
+        include:
+        #   - os: windows-latest
+        #     name: win64
+          - os: ubuntu-latest
+            name: linux
+        #   # macos-13 is the last version that is still targetting Intel Macs
+        #   - os: macos-13
+        #     name: macos
+        #   - os: macos-latest
+        #     name: arm64-macos
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: matlab-actions/setup-matlab@v2
+        with:
+          # The list of Matlab products that we depend upon. The names have to match
+          # the ones in this document: https://github.com/mathworks-ref-arch/matlab-dockerfile/blob/main/mpm-input-files/R2024a/mpm_input_r2024a.txt#L67
+          products: >
+            Image_Processing_Toolbox
+            MATLAB_Compiler
+            Statistics_and_Machine_Learning_Toolbox
+
+      - name: Run installer
+        shell: bash
+        # TODO: Replace 'app.mlapp' with the path of your mlapp file
+        run: |
+          matlab-batch -licenseToken "${{ secrets.MATLAB_LICENSE_TOKEN }}" "buildResults = compiler.build.standaloneApplication('./app/matFLUX.mlapp'); fileList = buildResults.Files; fileList = [fileList; {'./app/zarr_extract.py'}]; runtimeProducts = fullfile(buildResults.Options.OutputDir,'requiredMCRProducts.txt'); compiler.package.installer(fileList, runtimeProducts, 'ApplicationName', 'matFLUX', 'InstallerName', 'matFLUXInstall');"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: installer-${{ matrix.name }}
+          path: installer
