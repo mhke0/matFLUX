@@ -32,9 +32,25 @@ jobs:
             Statistics_and_Machine_Learning_Toolbox
       - name: Run installer
         shell: bash
-        # Explicitly include both camera.png and zarr_extract.py but remove the unsupported Logo parameter
+        # Explicitly include both camera.png and zarr_extract.py
         run: |
           matlab-batch -licenseToken "${{ secrets.MATLAB_LICENSE_TOKEN }}" "buildResults = compiler.build.standaloneApplication('./app/matFLUX.mlapp'); fileList = buildResults.Files; fileList = [fileList; {'./app/zarr_extract.py'; './app/camera.png'}]; runtimeProducts = fullfile(buildResults.Options.OutputDir,'requiredMCRProducts.txt'); compiler.package.installer(fileList, runtimeProducts, 'ApplicationName', 'matFLUX', 'InstallerName', 'matFLUXInstall', 'OutputDir', './installer');"
+      
+      # Fix macOS app permissions and quarantine flags
+      - name: Fix macOS app permissions
+        if: startsWith(matrix.os, 'macos')
+        run: |
+          find ./installer -name "*.app" -type d -exec xattr -cr {} \;
+          find ./installer -name "*.app" -type d -exec chmod -R 755 {} \;
+          find ./installer -path "*/Contents/MacOS/*" -type f -exec chmod +x {} \;
+      
+      # Create ZIP archives for macOS for easier distribution
+      - name: Create macOS ZIP archive
+        if: startsWith(matrix.os, 'macos')
+        run: |
+          cd ./installer
+          find . -name "*.app" -type d -exec zip -r {}.zip {} \;
+      
       - uses: actions/upload-artifact@v4
         with:
           name: installer-${{ matrix.name }}
