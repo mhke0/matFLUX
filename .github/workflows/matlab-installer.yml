@@ -1,11 +1,9 @@
 name: Create standalone installers
-
 on:
   push:
     branches:
       - main
   workflow_dispatch:
-
 jobs:
   build:
     name: Build installer on ${{ matrix.os }}
@@ -22,10 +20,8 @@ jobs:
           - os: macos-latest
             name: arm64-macos
     runs-on: ${{ matrix.os }}
-
     steps:
       - uses: actions/checkout@v4
-
       - uses: matlab-actions/setup-matlab@v2
         with:
           # The list of Matlab products that we depend upon. The names have to match
@@ -34,13 +30,11 @@ jobs:
             Image_Processing_Toolbox
             MATLAB_Compiler
             Statistics_and_Machine_Learning_Toolbox
-
       - name: Run installer
         shell: bash
-        # TODO: Replace 'app.mlapp' with the path of your mlapp file
+        # Explicitly include both camera.png and zarr_extract.py in the file list
         run: |
-          matlab-batch -licenseToken "${{ secrets.MATLAB_LICENSE_TOKEN }}" "buildResults = compiler.build.standaloneApplication('./app/matFLUX.mlapp'); fileList = buildResults.Files; fileList = [fileList; {'./app/zarr_extract.py'}]; runtimeProducts = fullfile(buildResults.Options.OutputDir,'requiredMCRProducts.txt'); compiler.package.installer(fileList, runtimeProducts, 'ApplicationName', 'matFLUX', 'InstallerName', 'matFLUXInstall', 'OutputDir', './installer');"
-
+          matlab-batch -licenseToken "${{ secrets.MATLAB_LICENSE_TOKEN }}" "buildResults = compiler.build.standaloneApplication('./app/matFLUX.mlapp'); fileList = buildResults.Files; fileList = [fileList; {'./app/zarr_extract.py'; './app/camera.png'}]; runtimeProducts = fullfile(buildResults.Options.OutputDir,'requiredMCRProducts.txt'); compiler.package.installer(fileList, runtimeProducts, 'ApplicationName', 'matFLUX', 'InstallerName', 'matFLUXInstall', 'Logo', './app/logo.png', 'OutputDir', './installer');"
       - uses: actions/upload-artifact@v4
         with:
           name: installer-${{ matrix.name }}
