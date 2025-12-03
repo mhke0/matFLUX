@@ -1,0 +1,38 @@
+INCLUDED IN THIS PACKAGE
+=========================
+0. Folder Content
+-----------------
+This folder contains:
+-README.txt
+-matFLUX_Tutorial.pdf
+-Notes_for_First_Time_Users.txt
+-sample_two_color.zip
+	Sample Files (two color 3D MINFLUX) for app testing.
+-/matlab_app
+	Matlab App file for direct installation.
+-/source
+	source code.
+-/standalone
+	Standalone Versions of the MATLAB APP for Win, MacOS(ARM & Intel), Linux. Depends on the MATLAB Runtime.
+
+1. Sample Files
+---------------
+Example datasets are included to help you get started quickly and test the functionality of the software. For Alignment and two-color processing and analysis.
+
+2.1 MATLAB App Version
+---------------------
+This version is installed directly into your MATLAB environment as an App.
+
+- Best performance on most systems.
+- Recommended for users who already have MATLAB installed.
+
+2.2 Standalone Versions
+----------------------
+Standalone applications do NOT require a MATLAB license.
+They run using the MATLAB Runtime, which is automatically installed during setup (but sometimes slows down the experience).
+
+Available for the following platforms:
+- Windows (.exe)
+- macOS (Intel)
+- macOS (Apple Silicon / ARM)
+- Linux 
