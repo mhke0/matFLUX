@@ -1,6 +1,6 @@
 # matFLUX 1.0
 
-**matFLUX** is a MATLAB-based application designed for the analysis of **3D MINFLUX localization microscopy** data.  
+**matFLUX** is a MATLAB-based application designed for the analysis of isotropic **3D MINFLUX localization microscopy** data.  
 It provides tools for clustering, multi-channel alignment, radial distribution, and precision analysis of nanoscale structures in a user-friendly GUI.
 
 Kräusslich Lab, CIID Heidelberg, Germany.
@@ -17,6 +17,7 @@ Kräusslich Lab, CIID Heidelberg, Germany.
 - Line profile and radial distribution analysis
 - Cluster statistics, trace quality, and localization precision
 - Export to `.mat`, `.tif`, and high-resolution figures
+- Crop and Color adjustments
 
 ---
 
@@ -52,6 +53,7 @@ If you want to use automatic alignment based on bead data:
 - Install Python 3.x and ensure it's on your system PATH.
 - Required script: `resources/zarr_extract.py`
 - Bead data must be exported in ZARR format from the Abberior MINFLUX system.
+- If not directly detected, you can link the zarr script from within the app.
 
 ---
 
