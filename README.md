@@ -95,7 +95,7 @@ If you use matFLUX in your research, please cite it:
 ## 🤝 Contributing
 
 Pull requests, bug reports, and feature suggestions are welcome.  
-Please use the [Issues](https://github.com/yourusername/matFLUX/issues) tab to report problems or request features.
+Please use the [Issues](https://github.com/mhke0/matFLUX/issues) tab to report problems or request features.
 
 ---
 
