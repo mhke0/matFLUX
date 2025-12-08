@@ -16,7 +16,7 @@ jobs:
           - os: ubuntu-latest
             name: linux
           # macos-13 is the last version that is still targeting Intel Macs
-          - os: macos-13
+          - os: macos-15-intel
             name: macos
           - os: macos-latest
             name: arm64-macos
