@@ -3,8 +3,9 @@
 **matFLUX** is a MATLAB-based application designed for the analysis of isotropic **3D MINFLUX localization microscopy** data.  
 It provides tools for clustering, multi-channel alignment, radial distribution, and precision analysis of nanoscale structures in a user-friendly GUI.
 
+Publication:
 Multiplex 3D Nanoscopy Resolves Nanoarchitecture of Human Immunodeficiency Virus 
-https://doi.org/10.1021/acsnano.5c12222
+(https://doi.org/10.1021/acsnano.5c12222)
 
 Kräusslich Lab, CIID Heidelberg, Germany.
 
