@@ -88,7 +88,7 @@ If you use matFLUX in your research, please cite it:
 @software{hacke2025matflux,
   author       = {Moritz Hacke},
   title        = {matFLUX: A MATLAB application for 3D MINFLUX data analysis},
-  version      = {1.0},
+  version      = {0.9},
   year         = {2025},
   url          = {https://github.com/mhke0/matFLUX},
   note         = {MIT License}
