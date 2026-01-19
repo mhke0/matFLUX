@@ -1,4 +1,4 @@
-# matFLUX 1.0
+# matFLUX 0.9
 
 **matFLUX** is a MATLAB-based application designed for the analysis of isotropic **3D MINFLUX localization microscopy** data.  
 It provides tools for clustering, multi-channel alignment, radial distribution, and precision analysis of nanoscale structures in a user-friendly GUI.
