@@ -2,17 +2,15 @@ INCLUDED IN THIS PACKAGE
 =========================
 0. Folder Content
 -----------------
-This folder contains:
+This repo contains:
 -README.txt
 -matFLUX_Tutorial.pdf
 -Notes_for_First_Time_Users.txt
--sample_two_color.zip
+-/sample files/sample_MA_CA.zip
 	Sample Files (two color 3D MINFLUX) for app testing.
--/matlab_app
+-/app
 	Matlab App file for direct installation.
--/source
-	source code.
--/standalone
+-/software
 	Standalone Versions of the MATLAB APP for Win, MacOS(ARM & Intel), Linux. Depends on the MATLAB Runtime.
 
 1. Sample Files

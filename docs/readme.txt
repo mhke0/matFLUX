@@ -5,7 +5,7 @@
 |_| |_| |_|\__,_| \__||_|    |___| \____/ /_/\_\
 
 
-Tutorial for matFLUX 1.0
+Tutorial for matFLUX 0.9
 ========================
 
 Two variants:
@@ -38,7 +38,7 @@ The app includes interactive controls for loading data, adjusting DBSCAN cluster
 ----------------------------------------------------------------
 0. Requirements
 ----------------------------------------------------------------
-To run matFLUX 1.0, ensure your system meets the following requirements:
+To run matFLUX 0.9, ensure your system meets the following requirements:
 
 1. **MATLAB Version:**
    - MATLAB R2018b or later is recommended. Some functions are only available starting with MATLAB R2020a.
@@ -54,6 +54,7 @@ To run matFLUX 1.0, ensure your system meets the following requirements:
    - A Python executable must be installed and accessible in your system path.  
      This is needed for running external scripts (e.g., `zarr_extract.py`) to process bead correction data.
    - Python 3.x is recommended.
+   - Numpy and Scipy
 
 4. **External Files:**
    - This should automatically be installed with the .mLapp and the standalone version, but if not:
@@ -65,7 +66,7 @@ To run matFLUX 1.0, ensure your system meets the following requirements:
 ----------------------------------------------------------------
 When you start matFLUX, the startup routine displays a welcome message:
 
-  Welcome to matFLUX 1.0!
+  Welcome to matFLUX 0.9!
 
   Steps to begin:
   1. Click "New/Reset" to load your MINFLUX file.
@@ -217,4 +218,4 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN     
 THE SOFTWARE.
 ___________________________________________________
-Moritz Hacke, Heidelberg, 04/25
+Moritz Hacke, Heidelberg, 11/25
