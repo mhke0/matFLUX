@@ -37,7 +37,7 @@ Kräusslich Lab, CIID Heidelberg, Germany.
 
 Requirements:
 
-- MATLAB R2018b or later (App Designer required)
+- MATLAB R2018b or later
 - Toolboxes:
   - Statistics and Machine Learning Toolbox
   - Image Processing Toolbox
